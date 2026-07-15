@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  /* Brand Colors */
+  --color-primary: #FF6B35;
+  --color-secondary: #2D1B12;
+  --color-tertiary: #00A7CB;
+  --color-neutral: #87736C;
+  
+  /* Background Cream (from your earlier project specs) */
+  --color-cream: #FFF8F0;
+
+  /* Typography */
+  --font-headline: "Plus Jakarta Sans", sans-serif;
+  --font-body: "Be Vietnam Pro", sans-serif;
+}
+
+/* Optional: Set the global background and default text color immediately */
+@layer base {
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-secondary);
+    font-family: var(--font-body);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-headline);
+  }
+}
