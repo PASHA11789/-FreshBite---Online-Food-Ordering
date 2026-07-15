@@ -1,0 +1,149 @@
+[
+  {
+    "id": "r1",
+    "name": "The Lahore Karahi",
+    "description": "Authentic, rich, and spicy traditional handi and karahi dishes cooked to perfection.",
+    "images": [
+      "https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?q=80&w=600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?q=80&w=600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1565557623262-b51c2513a641?q=80&w=600&auto=format&fit=crop"
+    ],
+    "menu": [
+      { "id": "m101", "name": "Chicken Karahi", "description": "Classic wok-cooked chicken with tomatoes, green chilies, and ginger.", "price": 14.99, "category": "Desi", "image": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?q=80&w=500&auto=format&fit=crop" },
+      { "id": "m102", "name": "Mutton Handi", "description": "Boneless mutton cooked in a creamy, mildly spiced gravy.", "price": 18.99, "category": "Desi", "image": "https://images.unsplash.com/photo-1585937421612-70a008356fbe?q=80&w=500&auto=format&fit=crop" },
+      { "id": "m103", "name": "Beef Nihari", "description": "Slow-cooked beef shank stew garnished with ginger and lemon.", "price": 16.50, "category": "Desi", "image": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?q=80&w=500&auto=format&fit=crop" },
+      { "id": "m104", "name": "Seekh Kebab", "description": "Spiced minced beef grilled on skewers over charcoal.", "price": 11.99, "category": "Desi", "image": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=500&auto=format&fit=crop" },
+      { "id": "m105", "name": "Chicken Biryani", "description": "Fragrant basmati rice cooked with spiced chicken and herbs.", "price": 13.99, "category": "Desi", "image": "https://images.unsplash.com/photo-1633383718081-22ac93e3db65?q=80&w=500&auto=format&fit=crop" },
+      { "id": "m106", "name": "Garlic Naan", "description": "Freshly baked flatbread brushed with butter and minced garlic.", "price": 2.99, "category": "Desi", "image": "https://images.unsplash.com/photo-1626074353765-517a681e40be?q=80&w=500&auto=format&fit=crop" },
+      { "id": "m107", "name": "Crispy Fries", "description": "A side of golden, crispy salted fries.", "price": 4.99, "category": "Fast Food", "image": "https://images.unsplash.com/photo-1576107232684-1279f390859f?q=80&w=500&auto=format&fit=crop" },
+      { "id": "d101", "name": "Mango Lassi", "description": "Sweet and creamy yogurt drink blended with fresh mangoes.", "price": 4.50, "category": "Drinks", "image": "https://images.unsplash.com/photo-1546171753-97d7676e4602?q=80&w=500&auto=format&fit=crop" },
+      { "id": "d102", "name": "Mint Margarita", "description": "Refreshing crushed ice drink with fresh mint and lemon.", "price": 3.99, "category": "Drinks", "image": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?q=80&w=500&auto=format&fit=crop" },
+      { "id": "d103", "name": "Karak Chai", "description": "Strong, brewed milk tea with cardamom.", "price": 2.50, "category": "Drinks", "image": "https://images.unsplash.com/photo-1561336313-0bd5e0b27ec8?q=80&w=500&auto=format&fit=crop" },
+      { "id": "s101", "name": "Gulab Jamun", "description": "Deep-fried dough balls soaked in warm sugar syrup.", "price": 5.99, "category": "Desserts", "image": "https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=500&auto=format&fit=crop" },
+      { "id": "s102", "name": "Ras Malai", "description": "Soft cheese patties immersed in chilled, sweetened milk.", "price": 6.50, "category": "Desserts", "image": "https://images.unsplash.com/photo-1601050690597-df0568f70950?q=80&w=500&auto=format&fit=crop" },
+      { "id": "s103", "name": "Gajar Ka Halwa", "description": "Warm, sweet carrot pudding topped with nuts.", "price": 5.50, "category": "Desserts", "image": "https://images.unsplash.com/photo-1587314168485-3236d6710814?q=80&w=500&auto=format&fit=crop" }
+    ]
+  },
+  {
+    "id": "r2",
+    "name": "Burger Cartel",
+    "description": "Gourmet smash burgers, crispy chicken sandwiches, and loaded fries.",
+    "images": [
+      "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1586816001966-79b736744398?q=80&w=600&auto=format&fit=crop"
+    ],
+    "menu": [
+      { "id": "m201", "name": "Double Smash Burger", "description": "Two smashed beef patties, American cheese, pickles, and cartel sauce.", "price": 12.99, "category": "Fast Food", "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=500&auto=format&fit=crop" },
+      { "id": "m202", "name": "Crispy Chicken Sandwich", "description": "Buttermilk fried chicken breast with spicy mayo and slaw.", "price": 11.50, "category": "Fast Food", "image": "https://images.unsplash.com/photo-1606755962773-d324e0a13086?q=80&w=500&auto=format&fit=crop" },
+      { "id": "m203", "name": "BBQ Bacon Burger", "description": "Beef patty topped with crispy bacon, onion rings, and BBQ sauce.", "price": 14.50, "category": "Fast Food", "image": "https://images.unsplash.com/photo-1594212691516-7248efafdb75?q=80&w=500&auto=format&fit=crop" },
+      { "id": "m204", "name": "Spicy Jalapeno Burger", "description": "Beef burger loaded with pepper jack cheese and grilled jalapenos.", "price": 13.99, "category": "Fast Food", "image": "https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=500&auto=format&fit=crop" },
+      { "id": "m205", "name": "Truffle Parmesan Fries", "description": "Crispy fries tossed in truffle oil and parmesan cheese.", "price": 6.99, "category": "Fast Food", "image": "https://images.unsplash.com/photo-1630431341973-02e1b662ce3b?q=80&w=500&auto=format&fit=crop" },
+      { "id": "m206", "name": "Loaded Nachos", "description": "Tortilla chips with melted cheese, jalapeños, and ground beef.", "price": 9.99, "category": "Fast Food", "image": "https://images.unsplash.com/photo-1513456852971-30c0b8199d4d?q=80&w=500&auto=format&fit=crop" },
+      { "id": "m207", "name": "Chicken Tikka Wrap", "description": "Spicy chicken tikka wrapped in a paratha with mint chutney.", "price": 8.99, "category": "Desi", "image": "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?q=80&w=500&auto=format&fit=crop" },
+      { "id": "d201", "name": "Vanilla Milkshake", "description": "Classic thick milkshake made with real vanilla beans.", "price": 5.99, "category": "Drinks", "image": "https://images.unsplash.com/photo-1572490122747-3968b75bb699?q=80&w=500&auto=format&fit=crop" },
+      { "id": "d202", "name": "Fountain Cola", "description": "Ice-cold draft cola.", "price": 2.99, "category": "Drinks", "image": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?q=80&w=500&auto=format&fit=crop" },
+      { "id": "s201", "name": "Chocolate Lava Cake", "description": "Warm chocolate cake with a molten center.", "price": 7.99, "category": "Desserts", "image": "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?q=80&w=500&auto=format&fit=crop" },
+      { "id": "s202", "name": "New York Cheesecake", "description": "Creamy cheesecake slice with a graham cracker crust.", "price": 6.99, "category": "Desserts", "image": "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?q=80&w=500&auto=format&fit=crop" }
+    ]
+  },
+  {
+    "id": "r3",
+    "name": "Karachi Grill House",
+    "description": "The perfect fusion of smoky BBQ and street-style fast food.",
+    "images": [
+      "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1615719413546-198b25453f85?q=80&w=600&auto=format&fit=crop"
+    ],
+    "menu": [
+      { "id": "m301", "name": "Chicken Malai Boti", "description": "Creamy, melt-in-your-mouth grilled chicken pieces.", "price": 13.99, "category": "Desi", "image": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=500&auto=format&fit=crop" },
+      { "id": "m302", "name": "Beef Chapli Kebab", "description": "Peshawari-style flat beef kebabs with tomatoes and spices.", "price": 14.50, "category": "Desi", "image": "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?q=80&w=500&auto=format&fit=crop" },
+      { "id": "m303", "name": "Zinger Burger", "description": "Crispy fried chicken thigh in a soft bun with mayo and lettuce.", "price": 9.99, "category": "Fast Food", "image": "https://images.unsplash.com/photo-1615719413546-198b25453f85?q=80&w=500&auto=format&fit=crop" },
+      { "id": "m304", "name": "Club Sandwich", "description": "Triple-decker sandwich with grilled chicken, egg, and cheese.", "price": 8.99, "category": "Fast Food", "image": "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?q=80&w=500&auto=format&fit=crop" },
+      { "id": "m305", "name": "Chicken Paratha Roll", "description": "BBQ chicken wrapped in a crispy fried flatbread.", "price": 7.50, "category": "Desi", "image": "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?q=80&w=500&auto=format&fit=crop" },
+      { "id": "m306", "name": "Masala Fries", "description": "Fries tossed in a spicy, tangy dry rub.", "price": 4.50, "category": "Fast Food", "image": "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?q=80&w=500&auto=format&fit=crop" },
+      { "id": "m307", "name": "Mutton Chops", "description": "Tender grilled mutton chops marinated in secret spices.", "price": 19.99, "category": "Desi", "image": "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=500&auto=format&fit=crop" },
+      { "id": "d301", "name": "Fresh Lime Sprite", "description": "Sprite mixed with fresh lime juice and black salt.", "price": 3.50, "category": "Drinks", "image": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?q=80&w=500&auto=format&fit=crop" },
+      { "id": "d302", "name": "Pakola Ice Cream Soda", "description": "The classic green ice cream soda.", "price": 2.99, "category": "Drinks", "image": "https://images.unsplash.com/photo-1525385133512-2f3bdd039054?q=80&w=500&auto=format&fit=crop" },
+      { "id": "d303", "name": "Rooh Afza Milk", "description": "Chilled milk flavored with sweet rose syrup.", "price": 3.99, "category": "Drinks", "image": "https://images.unsplash.com/photo-1556679343-c7306c1976bc?q=80&w=500&auto=format&fit=crop" },
+      { "id": "s301", "name": "Kheer", "description": "Traditional rice pudding flavored with cardamom and pistachios.", "price": 5.50, "category": "Desserts", "image": "https://images.unsplash.com/photo-1587314168485-3236d6710814?q=80&w=500&auto=format&fit=crop" },
+      { "id": "s302", "name": "Falooda", "description": "Rose milk topped with vermicelli, basil seeds, and ice cream.", "price": 6.99, "category": "Desserts", "image": "https://images.unsplash.com/photo-1563805042-7684c8e9e533?q=80&w=500&auto=format&fit=crop" },
+      { "id": "s303", "name": "Brownie Sundae", "description": "Warm brownie topped with vanilla ice cream and hot fudge.", "price": 7.50, "category": "Desserts", "image": "https://images.unsplash.com/photo-1563636619-e9143da7973b?q=80&w=500&auto=format&fit=crop" }
+    ]
+  },
+  {
+    "id": "r4",
+    "name": "Urban Slice",
+    "description": "Hand-tossed pizzas, crispy wings, and hearty Italian-American favorites.",
+    "images": [
+      "https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1590947132387-155cc02f3212?q=80&w=600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?q=80&w=600&auto=format&fit=crop"
+    ],
+    "menu": [
+      { "id": "m401", "name": "Margherita Pizza", "description": "Classic pizza with fresh mozzarella, basil, and tomato sauce.", "price": 15.99, "category": "Fast Food", "image": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?q=80&w=500&auto=format&fit=crop" },
+      { "id": "m402", "name": "Pepperoni Pizza", "description": "Loaded with spicy beef pepperoni and mozzarella.", "price": 17.99, "category": "Fast Food", "image": "https://images.unsplash.com/photo-1628840042765-356cda07504e?q=80&w=500&auto=format&fit=crop" },
+      { "id": "m403", "name": "BBQ Chicken Pizza", "description": "Grilled chicken, red onions, and BBQ sauce drizzle.", "price": 18.50, "category": "Fast Food", "image": "https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=500&auto=format&fit=crop" },
+      { "id": "m404", "name": "Fettuccine Alfredo", "description": "Creamy parmesan pasta topped with grilled chicken.", "price": 14.99, "category": "Fast Food", "image": "https://images.unsplash.com/photo-1645112411341-6c4fd023714a?q=80&w=500&auto=format&fit=crop" },
+      { "id": "m405", "name": "Buffalo Wings", "description": "Crispy chicken wings tossed in spicy buffalo sauce.", "price": 10.99, "category": "Fast Food", "image": "https://images.unsplash.com/photo-1608039829572-78524f79c4c7?q=80&w=500&auto=format&fit=crop" },
+      { "id": "m406", "name": "Garlic Bread with Cheese", "description": "Toasted baguette slices with garlic butter and melted mozzarella.", "price": 6.99, "category": "Fast Food", "image": "https://images.unsplash.com/photo-1573140247632-f8fd74997d5c?q=80&w=500&auto=format&fit=crop" },
+      { "id": "m407", "name": "Paneer Tikka Pizza", "description": "Fusion pizza topped with spicy desi paneer and bell peppers.", "price": 18.99, "category": "Desi", "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=500&auto=format&fit=crop" },
+      { "id": "d401", "name": "Iced Lemon Tea", "description": "Sweetened iced tea with a splash of fresh lemon.", "price": 3.99, "category": "Drinks", "image": "https://images.unsplash.com/photo-1556679343-c7306c1976bc?q=80&w=500&auto=format&fit=crop" },
+      { "id": "d402", "name": "Ginger Ale", "description": "Bubbly and refreshing ginger soda.", "price": 2.99, "category": "Drinks", "image": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?q=80&w=500&auto=format&fit=crop" },
+      { "id": "s401", "name": "Tiramisu", "description": "Coffee-soaked ladyfingers layered with mascarpone cream.", "price": 7.99, "category": "Desserts", "image": "https://images.unsplash.com/photo-1571115177098-24ec42ed204d?q=80&w=500&auto=format&fit=crop" },
+      { "id": "s402", "name": "Cinnamon Sticks", "description": "Warm pizza dough sticks dusted with cinnamon and sugar.", "price": 5.99, "category": "Desserts", "image": "https://images.unsplash.com/photo-1509365465994-3e819b16fb35?q=80&w=500&auto=format&fit=crop" },
+      { "id": "s403", "name": "Chocolate Chip Cookie", "description": "Giant, warm, gooey chocolate chip cookie.", "price": 3.99, "category": "Desserts", "image": "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?q=80&w=500&auto=format&fit=crop" },
+      { "id": "s404", "name": "Vanilla Gelato", "description": "A scoop of rich Italian vanilla ice cream.", "price": 4.50, "category": "Desserts", "image": "https://images.unsplash.com/photo-1563805042-7684c8e9e533?q=80&w=500&auto=format&fit=crop" }
+    ]
+  },
+  {
+    "id": "r5",
+    "name": "Desi Dastarkhwan",
+    "description": "A feast for the senses, featuring home-style curries and fragrant rice.",
+    "images": [
+      "https://images.unsplash.com/photo-1585937421612-70a008356fbe?q=80&w=600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1546833999-b9f581a1996d?q=80&w=600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=600&auto=format&fit=crop"
+    ],
+    "menu": [
+      { "id": "m501", "name": "Butter Chicken", "description": "Tender chicken cooked in a rich, buttery tomato gravy.", "price": 16.99, "category": "Desi", "image": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?q=80&w=500&auto=format&fit=crop" },
+      { "id": "m502", "name": "Palak Paneer", "description": "Cottage cheese cubes simmered in a spiced spinach puree.", "price": 14.50, "category": "Desi", "image": "https://images.unsplash.com/photo-1601050690597-df0568f70950?q=80&w=500&auto=format&fit=crop" },
+      { "id": "m503", "name": "Daal Makhani", "description": "Black lentils slow-cooked overnight with cream and butter.", "price": 12.99, "category": "Desi", "image": "https://images.unsplash.com/photo-1585937421612-70a008356fbe?q=80&w=500&auto=format&fit=crop" },
+      { "id": "m504", "name": "Aloo Gosht", "description": "Traditional meat and potato curry with thin, flavorful gravy.", "price": 15.99, "category": "Desi", "image": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?q=80&w=500&auto=format&fit=crop" },
+      { "id": "m505", "name": "Mutton Pulao", "description": "Basmati rice cooked in seasoned mutton broth with tender meat.", "price": 17.50, "category": "Desi", "image": "https://images.unsplash.com/photo-1633383718081-22ac93e3db65?q=80&w=500&auto=format&fit=crop" },
+      { "id": "m506", "name": "Tandoori Roti", "description": "Whole wheat flatbread baked in a clay oven.", "price": 1.99, "category": "Desi", "image": "https://images.unsplash.com/photo-1626074353765-517a681e40be?q=80&w=500&auto=format&fit=crop" },
+      { "id": "m507", "name": "Chicken Samosa (2 pcs)", "description": "Crispy pastry filled with spiced minced chicken.", "price": 4.50, "category": "Fast Food", "image": "https://images.unsplash.com/photo-1601050690597-df0568f70950?q=80&w=500&auto=format&fit=crop" },
+      { "id": "d501", "name": "Jaljeera", "description": "Tangy and spicy cumin-flavored cooling drink.", "price": 3.50, "category": "Drinks", "image": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?q=80&w=500&auto=format&fit=crop" },
+      { "id": "d502", "name": "Sweet Lassi", "description": "Thick, churned yogurt drink served chilled.", "price": 4.50, "category": "Drinks", "image": "https://images.unsplash.com/photo-1546171753-97d7676e4602?q=80&w=500&auto=format&fit=crop" },
+      { "id": "s501", "name": "Shahi Tukda", "description": "Fried bread soaked in saffron milk and garnished with nuts.", "price": 6.50, "category": "Desserts", "image": "https://images.unsplash.com/photo-1587314168485-3236d6710814?q=80&w=500&auto=format&fit=crop" },
+      { "id": "s502", "name": "Jalebi", "description": "Crispy, deep-fried spirals soaked in sugar syrup.", "price": 4.99, "category": "Desserts", "image": "https://images.unsplash.com/photo-1627308595229-7830f5c9c66e?q=80&w=500&auto=format&fit=crop" }
+    ]
+  },
+  {
+    "id": "r6",
+    "name": "Crunchy Bites",
+    "description": "Your ultimate craving killer with fried chicken, wraps, and crispy snacks.",
+    "images": [
+      "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?q=80&w=600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1613564834361-9436948817d1?q=80&w=600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=600&auto=format&fit=crop"
+    ],
+    "menu": [
+      { "id": "m601", "name": "Fried Chicken Bucket", "description": "8 pieces of crispy, golden-fried chicken.", "price": 22.99, "category": "Fast Food", "image": "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?q=80&w=500&auto=format&fit=crop" },
+      { "id": "m602", "name": "Chicken Tenders", "description": "5 pieces of boneless, crispy chicken strips with honey mustard.", "price": 9.99, "category": "Fast Food", "image": "https://images.unsplash.com/photo-1562967914-01efa7e87832?q=80&w=500&auto=format&fit=crop" },
+      { "id": "m603", "name": "Spicy Wrap", "description": "Crispy chicken, lettuce, cheese, and spicy mayo in a tortilla.", "price": 8.50, "category": "Fast Food", "image": "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?q=80&w=500&auto=format&fit=crop" },
+      { "id": "m604", "name": "Cheese Fries", "description": "Crinkle-cut fries smothered in warm liquid cheese.", "price": 6.50, "category": "Fast Food", "image": "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?q=80&w=500&auto=format&fit=crop" },
+      { "id": "m605", "name": "Jalapeno Poppers", "description": "Deep-fried jalapeños stuffed with cream cheese.", "price": 7.50, "category": "Fast Food", "image": "https://images.unsplash.com/photo-1596797038530-2c107229654b?q=80&w=500&auto=format&fit=crop" },
+      { "id": "m606", "name": "Mozzarella Sticks", "description": "6 pieces of breaded, fried mozzarella with marinara dip.", "price": 6.99, "category": "Fast Food", "image": "https://images.unsplash.com/photo-1531749668029-2be8f45a2789?q=80&w=500&auto=format&fit=crop" },
+      { "id": "m607", "name": "Aloo Samosa (2 pcs)", "description": "Crispy pastry filled with spiced potatoes and peas.", "price": 3.99, "category": "Desi", "image": "https://images.unsplash.com/photo-1601050690597-df0568f70950?q=80&w=500&auto=format&fit=crop" },
+      { "id": "d601", "name": "Oreo Shake", "description": "Vanilla ice cream blended with crushed Oreo cookies.", "price": 6.50, "category": "Drinks", "image": "https://images.unsplash.com/photo-1572490122747-3968b75bb699?q=80&w=500&auto=format&fit=crop" },
+      { "id": "d602", "name": "Cold Coffee", "description": "Sweet, blended iced coffee.", "price": 5.50, "category": "Drinks", "image": "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=500&auto=format&fit=crop" },
+      { "id": "d603", "name": "Orange Soda", "description": "Crisp and bubbly orange-flavored soda.", "price": 2.50, "category": "Drinks", "image": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?q=80&w=500&auto=format&fit=crop" },
+      { "id": "s601", "name": "Belgian Waffles", "description": "Warm waffles topped with maple syrup and butter.", "price": 7.99, "category": "Desserts", "image": "https://images.unsplash.com/photo-1503485838016-53579610c389?q=80&w=500&auto=format&fit=crop" },
+      { "id": "s602", "name": "Glazed Donut", "description": "Classic, soft donut with a sweet vanilla glaze.", "price": 2.99, "category": "Desserts", "image": "https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=500&auto=format&fit=crop" },
+      { "id": "s603", "name": "Ice Cream Sundae", "description": "Two scoops of ice cream with chocolate syrup and a cherry.", "price": 5.50, "category": "Desserts", "image": "https://images.unsplash.com/photo-1563636619-e9143da7973b?q=80&w=500&auto=format&fit=crop" },
+      { "id": "s604", "name": "Churros", "description": "Fried dough strips dusted with cinnamon sugar.", "price": 5.99, "category": "Desserts", "image": "https://images.unsplash.com/photo-1509365465994-3e819b16fb35?q=80&w=500&auto=format&fit=crop" }
+    ]
+  }
+]
