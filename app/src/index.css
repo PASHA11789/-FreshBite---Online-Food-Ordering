@@ -9,7 +9,7 @@
   --color-tertiary: #00A7CB;
   --color-neutral: #87736C;
   
-  /* Background Cream (from your earlier project specs) */
+  /* Background Cream  */
   --color-cream: #FFF8F0;
 
   /* Typography */
@@ -17,7 +17,6 @@
   --font-body: "Be Vietnam Pro", sans-serif;
 }
 
-/* Optional: Set the global background and default text color immediately */
 @layer base {
   body {
     background-color: var(--color-cream);
