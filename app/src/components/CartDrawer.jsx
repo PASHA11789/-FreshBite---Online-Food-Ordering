@@ -26,20 +26,16 @@ function CartDrawer() {
 
   return (
     <div className="fixed inset-0 z-50 overflow-hidden">
-      {/* Background Overlay */}
       <div
         className="absolute inset-0 bg-secondary/40 backdrop-blur-xs transition-opacity duration-300"
         onClick={() => setIsCartOpen(false)}
       />
 
-      {/* Drawer Container */}
       <div className="absolute inset-y-0 right-0 max-w-full flex pl-10">
         <div className="w-screen max-w-md bg-[#FFF8F0] shadow-2xl flex flex-col h-full">
-          {/* Header */}
           <div className="px-6 py-5 border-b border-[#EAE5E2] bg-white flex justify-between items-center">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-[#FFECE5] rounded-full flex items-center justify-center">
-                {/* Bag Icon */}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -80,7 +76,6 @@ function CartDrawer() {
             </button>
           </div>
 
-          {/* Cart List */}
           <div className="flex-1 overflow-y-auto p-6 space-y-4">
             {cartItems.length === 0 ? (
               <div className="h-full flex flex-col items-center justify-center text-center">
@@ -149,7 +144,6 @@ function CartDrawer() {
                         ${(item.price * item.quantity).toFixed(2)}
                       </span>
                       
-                      {/* Quantity Controls Pill */}
                       <div className="bg-[#FAF6F3] rounded-full px-2.5 py-0.5 flex items-center gap-2 border border-[#EAE5E2]">
                         <button
                           onClick={() => updateQuantity(item.id, item.quantity - 1)}
@@ -176,7 +170,6 @@ function CartDrawer() {
             )}
           </div>
 
-          {/* Footer (Totals & Action) */}
           {cartItems.length > 0 && (
             <div className="p-6 border-t border-[#EAE5E2] bg-white flex flex-col gap-4">
               <div className="space-y-2">

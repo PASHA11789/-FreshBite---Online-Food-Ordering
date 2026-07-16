@@ -12,10 +12,10 @@ function Footer() {
         </div>
 
         <div className="flex flex-wrap items-center gap-6 justify-center text-[13px] font-extrabold text-[#8c827b]">
-          <a href="/Categories" className="hover:text-primary transition">Categories</a>
-          <a href="/HelpCenter" className="hover:text-primary transition">Help Center</a>
-          <a href="/Terms" className="hover:text-primary transition">Terms of Service</a>
-          <a href="/Privacy" className="hover:text-primary transition">Privacy Policy</a>
+          <a href="/About" className="hover:text-primary transition">About Us</a>
+          <a href="/Contact" className="hover:text-primary transition">Contact Us</a>
+          <p className='hover:text-primary transition cursor-pointer'>Terms of Service</p>
+          <p className='hover:text-primary transition cursor-pointer'>Privacy Policy</p>
         </div>
       </div>
     </footer>

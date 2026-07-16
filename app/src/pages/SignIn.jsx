@@ -23,7 +23,7 @@ function SignIn() {
 
     return (
         <div className="flex w-full min-h-screen overflow-hidden">
-            <div className="relative w-[60%] h-[100vh] bg-[url('/restaurantImages/top-view-meals-tasty-yummy-different-pastries-dishes-brown-surface.jpg')] justify-between bg-cover flex flex-col bg-center p-10">
+            <div className="relative hidden lg:flex lg:w-[60%] h-[100vh] bg-[url('/restaurantImages/top-view-meals-tasty-yummy-different-pastries-dishes-brown-surface.jpg')] justify-between bg-cover flex flex-col bg-center p-10">
                 <div className="absolute inset-0 bg-black/45"></div>
                 <h1 className="relative z-10 text-2xl w-[200px] font-bold text-primary font-serif">Fresh Bite</h1>
                 <div className="relative z-10 w-[70%] flex flex-col gap-5 text-white bg-white/10 backdrop-blur-md border border-white/15 p-8 rounded-2xl shadow-xl">
@@ -32,11 +32,11 @@ function SignIn() {
                 </div>
             </div>
 
-            <div className="w-[40%] h-[100vh] bg-cream flex items-center justify-center p-10">
+            <div className="w-full lg:w-[40%] min-h-screen bg-cream flex items-center justify-center p-6 sm:p-10">
                 <div className="w-full max-w-[420px] flex flex-col">
                     <div className="text-center mb-8">
-                        <h1 className="text-5xl font-bold text-secondary tracking-tight">Welcome Back</h1>
-                        <p className="text-[17px] mt-2.5 text-neutral/90 font-medium">We've missed your appetite! Please sign in.</p>
+                        <h1 className="text-4xl sm:text-5xl font-bold text-secondary tracking-tight">Welcome Back</h1>
+                        <p className="text-[15px] sm:text-[17px] mt-2.5 text-neutral/90 font-medium">We've missed your appetite! Please sign in.</p>
                     </div>
 
                     <form className="flex flex-col gap-5" onSubmit={handleSignIn}>
@@ -59,7 +59,7 @@ function SignIn() {
                         <div>
                             <div className="flex justify-between items-center mb-2">
                                 <label className="text-secondary font-bold text-[15px]">Password</label>
-                                <span className="text-[#B43E12] font-bold text-[15px] hover:underline cursor-pointer">Forgot Password?</span>
+                                <span className="text-[#B43E12] font-bold text-sm sm:text-[15px] hover:underline cursor-pointer">Forgot Password?</span>
                             </div>
                             <div className="relative flex items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="w-5 h-5 text-neutral/60 absolute left-4.5">
@@ -132,4 +132,4 @@ function SignIn() {
     );
 }
 
-export default SignIn; 
+export default SignIn;

@@ -1,10 +1,10 @@
-import React, { useState, useMemo } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import { useAuth } from "../context/authContext";
 
 function CheckOut() {
-  const { cartItems, cartTotal, clearCart } = useCart();
+  const { cartItems, cartTotal, clearCart, promoDiscount, applyPromoCode } = useCart();
   const { user } = useAuth();
   const navigate = useNavigate();
 
@@ -20,12 +20,23 @@ function CheckOut() {
     cardCvv: "",
   });
 
-  const [paymentMethod, setPaymentMethod] = useState("cod"); // 'cod' or 'card'
+  const [paymentMethod, setPaymentMethod] = useState("cod");
+  const [deliveryTime, setDeliveryTime] = useState("standard");
+  const [scheduledHour, setScheduledHour] = useState("19:00");
+  
+  const [promoCodeInput, setPromoCodeInput] = useState("");
+  const [promoError, setPromoError] = useState("");
+  const [promoSuccessMsg, setPromoSuccessMsg] = useState("");
+
+  const [isProcessingPayment, setIsProcessingPayment] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [orderId, setOrderId] = useState("");
 
-  const deliveryFee = 2.99;
+  const deliveryFee = deliveryTime === "express" ? 4.99 : deliveryTime === "scheduled" ? 3.49 : 2.99;
   const tax = 1.50;
+  
+  const originalSubtotal = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  const discountAmount = originalSubtotal * (promoDiscount / 100);
   const total = cartTotal > 0 ? cartTotal + deliveryFee + tax : 0;
 
   const handleInputChange = (e) => {
@@ -33,16 +44,80 @@ function CheckOut() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
+  const handleApplyCoupon = (e) => {
+    e.preventDefault();
+    if (!promoCodeInput) return;
+    const res = applyPromoCode(promoCodeInput);
+    if (res.success) {
+      setPromoSuccessMsg(res.message);
+      setPromoError("");
+    } else {
+      setPromoError(res.message);
+      setPromoSuccessMsg("");
+    }
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (cartItems.length === 0) return;
 
-    // Simulate order placement
     const generatedId = `FB-${Math.floor(100000 + Math.random() * 900000)}`;
-    setOrderId(generatedId);
-    setIsSuccess(true);
-    clearCart(); // Clear cart after placing order
+
+    const placeSimulatedOrder = () => {
+      const formattedTime =
+        deliveryTime === "express"
+          ? "Express (15-20 mins)"
+          : deliveryTime === "scheduled"
+          ? `Scheduled (at ${scheduledHour})`
+          : "Standard (25-35 mins)";
+
+      const newOrder = {
+        id: generatedId,
+        date: new Date().toISOString(),
+        items: [...cartItems],
+        total: total,
+        customerName: formData.fullName,
+        address: formData.address,
+        phone: formData.phone,
+        paymentMethod: paymentMethod === "cod" ? "Cash on Delivery" : "Credit Card",
+        deliveryTime: formattedTime,
+        status: "Preparing"
+      };
+
+      try {
+        const existingOrders = JSON.parse(localStorage.getItem("freshbite_orders") || "[]");
+        localStorage.setItem("freshbite_orders", JSON.stringify([newOrder, ...existingOrders]));
+      } catch (err) {
+        console.error("Failed to save order to localStorage:", err);
+      }
+
+      setOrderId(generatedId);
+      setIsSuccess(true);
+      clearCart();
+    };
+
+    if (paymentMethod === "card") {
+      setIsProcessingPayment(true);
+      setTimeout(() => {
+        setIsProcessingPayment(false);
+        placeSimulatedOrder();
+      }, 2000);
+    } else {
+      placeSimulatedOrder();
+    }
   };
+
+  if (isProcessingPayment) {
+    return (
+      <div className="flex-1 flex flex-col items-center justify-center py-24 px-6 text-center bg-[#FFF8F0]">
+        <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin mb-6"></div>
+        <h2 className="text-2xl font-black text-secondary tracking-tight">Processing Payment</h2>
+        <p className="text-neutral text-sm mt-2 max-w-xs font-semibold">
+          Contacting secure payment gateway... Please do not refresh the page.
+        </p>
+      </div>
+    );
+  }
 
   if (isSuccess) {
     return (
@@ -78,8 +153,14 @@ function CheckOut() {
               <span className="text-secondary">{orderId}</span>
             </div>
             <div className="flex justify-between text-xs font-bold text-neutral">
-              <span>Delivery Time</span>
-              <span className="text-primary font-black">25-35 mins</span>
+              <span>Delivery Option</span>
+              <span className="text-primary font-black">
+                {deliveryTime === "express"
+                  ? "Express (15-20 mins)"
+                  : deliveryTime === "scheduled"
+                  ? `Scheduled (at ${scheduledHour})`
+                  : "Standard (25-35 mins)"}
+              </span>
             </div>
             <div className="flex justify-between text-xs font-bold text-neutral pt-2 border-t border-[#EAE5E2]">
               <span>Customer</span>
@@ -92,10 +173,10 @@ function CheckOut() {
           </div>
 
           <button
-            onClick={() => navigate("/")}
+            onClick={() => navigate("/Profile")}
             className="w-full bg-primary hover:bg-[#E0531F] text-white py-3.5 rounded-2xl font-bold text-sm shadow-sm transition active:scale-95 cursor-pointer"
           >
-            Back to Home
+            Track Order In Profile
           </button>
         </div>
       </div>
@@ -114,9 +195,7 @@ function CheckOut() {
       </div>
 
       <div className="flex flex-col lg:flex-row gap-10 items-start w-full">
-        {/* Forms Card */}
         <form onSubmit={handleSubmit} className="flex-1 w-full space-y-8">
-          {/* Shipping Form */}
           <div className="bg-white border border-[#EAE5E2] rounded-[32px] p-6 sm:p-8 shadow-sm space-y-5">
             <h2 className="text-lg font-black text-secondary border-b border-[#EAE5E2] pb-3 mb-2 flex items-center gap-2">
               <span className="w-1.5 h-6 bg-primary rounded-full inline-block"></span>
@@ -177,19 +256,40 @@ function CheckOut() {
               />
             </div>
 
-            <div className="flex flex-col gap-1.5 col-span-1">
-              <label className="text-xs font-bold text-neutral">City</label>
-              <input
-                type="text"
-                name="city"
-                disabled
-                value={formData.city}
-                className="bg-[#FAF6F3]/50 border border-[#EAE5E2] text-neutral/70 rounded-xl py-2.5 px-4 text-sm cursor-not-allowed font-medium"
-              />
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="flex flex-col gap-1.5">
+                <label className="text-xs font-bold text-neutral">Delivery Time Preference</label>
+                <select
+                  value={deliveryTime}
+                  onChange={(e) => setDeliveryTime(e.target.value)}
+                  className="bg-[#FAF6F3] border border-[#EAE5E2] rounded-xl py-2.5 px-4 text-sm text-secondary outline-none focus:bg-white focus:border-primary/50 transition font-semibold"
+                >
+                  <option value="standard">Standard Delivery (25-35 min) - $2.99</option>
+                  <option value="express">Express Delivery (15-20 min) - $4.99</option>
+                  <option value="scheduled">Schedule Delivery - $3.49</option>
+                </select>
+              </div>
+
+              {deliveryTime === "scheduled" && (
+                <div className="flex flex-col gap-1.5">
+                  <label className="text-xs font-bold text-neutral">Choose Delivery Time</label>
+                  <select
+                    value={scheduledHour}
+                    onChange={(e) => setScheduledHour(e.target.value)}
+                    className="bg-[#FAF6F3] border border-[#EAE5E2] rounded-xl py-2.5 px-4 text-sm text-secondary outline-none focus:bg-white focus:border-primary/50 transition font-semibold"
+                  >
+                    <option value="18:30">6:30 PM</option>
+                    <option value="19:00">7:00 PM</option>
+                    <option value="19:30">7:30 PM</option>
+                    <option value="20:00">8:00 PM</option>
+                    <option value="20:30">8:30 PM</option>
+                    <option value="21:00">9:00 PM</option>
+                  </select>
+                </div>
+              )}
             </div>
           </div>
 
-          {/* Payment Method Form */}
           <div className="bg-white border border-[#EAE5E2] rounded-[32px] p-6 sm:p-8 shadow-sm space-y-6">
             <h2 className="text-lg font-black text-secondary border-b border-[#EAE5E2] pb-3 mb-2 flex items-center gap-2">
               <span className="w-1.5 h-6 bg-primary rounded-full inline-block"></span>
@@ -250,7 +350,6 @@ function CheckOut() {
               </label>
             </div>
 
-            {/* Collapsible Card Details Form */}
             {paymentMethod === "card" && (
               <div className="bg-[#FAF6F3] border border-[#EAE5E2] rounded-2xl p-5 space-y-4 transition-all duration-300">
                 <div className="flex flex-col gap-1.5">
@@ -311,7 +410,6 @@ function CheckOut() {
           </div>
         </form>
 
-        {/* Order Summary Sidebar */}
         <div className="w-full lg:w-[400px] shrink-0 bg-white border border-[#EAE5E2] rounded-[32px] p-6 sm:p-8 shadow-sm space-y-6">
           <h2 className="text-lg font-black text-secondary border-b border-[#EAE5E2] pb-3 mb-2 flex items-center gap-2">
             <span className="w-1.5 h-6 bg-primary rounded-full inline-block"></span>
@@ -330,7 +428,6 @@ function CheckOut() {
             </div>
           ) : (
             <>
-              {/* Scrollable list */}
               <div className="max-h-60 overflow-y-auto divide-y divide-[#EAE5E2]/50 pr-2 space-y-3">
                 {cartItems.map((item) => (
                   <div key={item.id} className="flex gap-3 pt-3 first:pt-0">
@@ -351,12 +448,40 @@ function CheckOut() {
                 ))}
               </div>
 
-              {/* Subtotals */}
+              <div className="border-t border-[#EAE5E2]/50 pt-4 space-y-2">
+                <label className="text-[11px] font-bold text-neutral block">Promo Code</label>
+                <div className="flex gap-2">
+                  <input
+                    type="text"
+                    placeholder="e.g. FRESHBITE20"
+                    value={promoCodeInput}
+                    onChange={(e) => setPromoCodeInput(e.target.value)}
+                    className="flex-1 bg-[#FAF6F3] border border-[#EAE5E2] rounded-xl px-3 py-1.5 text-xs text-secondary outline-none focus:border-primary/50 transition font-semibold"
+                  />
+                  <button
+                    onClick={handleApplyCoupon}
+                    className="bg-primary hover:bg-[#E0531F] text-white px-3 py-1.5 rounded-xl font-bold text-xs cursor-pointer shadow-xs"
+                  >
+                    Apply
+                  </button>
+                </div>
+                {promoError && <p className="text-[#B43E12] text-[10px] font-bold">{promoError}</p>}
+                {promoSuccessMsg && <p className="text-emerald-600 text-[10px] font-bold">{promoSuccessMsg}</p>}
+              </div>
+
               <div className="space-y-2 border-t border-[#EAE5E2]/60 pt-4">
                 <div className="flex justify-between text-xs font-semibold text-neutral">
                   <span>Subtotal</span>
-                  <span>${cartTotal.toFixed(2)}</span>
+                  <span>${originalSubtotal.toFixed(2)}</span>
                 </div>
+                
+                {promoDiscount > 0 && (
+                  <div className="flex justify-between text-xs font-semibold text-emerald-600">
+                    <span>Discount ({promoDiscount}%)</span>
+                    <span>-${discountAmount.toFixed(2)}</span>
+                  </div>
+                )}
+
                 <div className="flex justify-between text-xs font-semibold text-neutral">
                   <span>Delivery Fee</span>
                   <span>${deliveryFee.toFixed(2)}</span>
@@ -371,7 +496,6 @@ function CheckOut() {
                 </div>
               </div>
 
-              {/* Checkout submit trigger */}
               <button
                 onClick={handleSubmit}
                 disabled={cartItems.length === 0}

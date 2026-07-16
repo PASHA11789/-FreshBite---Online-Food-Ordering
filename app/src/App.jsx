@@ -4,6 +4,10 @@ import Homepage from "./pages/HomePage.jsx"
 import CheckOut from "./pages/CheckOut.jsx"
 import Menu from "./pages/Menu.jsx"
 import Cart from "./pages/Cart.jsx"
+import Orders from "./pages/Orders.jsx"
+import AboutUs from "./pages/AboutUs.jsx"
+import ContactUs from "./pages/ContactUs.jsx"
+import Profile from "./pages/Profile.jsx"
 import Header from "./components/Header.jsx"
 import CartDrawer from "./components/CartDrawer.jsx"
 
@@ -27,6 +31,10 @@ function App() {
           <Route path="/CheckOut" element={<CheckOut />} />
           <Route path="/Menu" element={<Menu />} />
           <Route path="/Cart" element={<Cart />} />
+          <Route path="/Orders" element={<Orders />} />
+          <Route path="/About" element={<AboutUs />} />
+          <Route path="/Contact" element={<ContactUs />} />
+          <Route path="/Profile" element={<Profile />} />
         </Routes>
       </main>
 
