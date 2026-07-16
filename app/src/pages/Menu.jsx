@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from "react";
 import { useLocation } from "react-router-dom";
 import mockRestaurants from "../data/mockRestaurants.json";
+import { useCart } from "../context/CartContext";
 
 const getItemRating = (id) => {
   const num = parseInt(id.replace(/\D/g, "")) || 0;
@@ -24,6 +25,8 @@ function Menu() {
   const location = useLocation();
   const restaurantName = location.state?.restaurantName || "Our Menu";
   const isGlobalMenu = restaurantName === "Our Menu";
+  
+  const { addToCart, setIsCartOpen } = useCart();
   
   const restaurantDetails = isGlobalMenu 
     ? {
@@ -210,6 +213,10 @@ function Menu() {
                         </span>
                         
                         <button 
+                          onClick={() => {
+                            addToCart(item, restaurantDetails.name);
+                            setIsCartOpen(true);
+                          }}
                           className="w-8 h-8 rounded-full bg-primary hover:bg-[#E0531F] text-white flex items-center justify-center transition active:scale-95 cursor-pointer shadow-sm shadow-primary/20"
                           aria-label="Add to Cart"
                         >

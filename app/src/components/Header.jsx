@@ -1,9 +1,11 @@
 import React from 'react';
 import { useLocation, Link } from 'react-router-dom';
+import { useCart } from '../context/CartContext';
 
 function Header() {
   const location = useLocation();
   const currentPath = location.pathname.toLowerCase();
+  const { cartCount, setIsCartOpen } = useCart();
 
 
   const isActive = (path) => {
@@ -66,17 +68,20 @@ function Header() {
             Orders
           </Link>
 
-          <Link 
-            to="/Cart" 
-            className={`relative p-1.5 cursor-pointer transition ${
-              isActive('/cart') ? 'text-primary' : 'text-secondary/75 hover:text-primary'
-            }`}
+          <button 
+            onClick={() => setIsCartOpen(true)}
+            className="relative p-1.5 cursor-pointer transition text-secondary/75 hover:text-primary focus:outline-none"
+            aria-label="Open Cart"
           >
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-[26px] h-[26px]">
               <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.7 2.1-7.5H6.218M9 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
             </svg>
-            <span className="absolute top-1 right-1 w-2.5 h-2.5 bg-primary rounded-full border border-cream"></span>
-          </Link>
+            {cartCount > 0 && (
+              <span className="absolute -top-0.5 -right-0.5 bg-primary text-white text-[10px] font-black w-4.5 h-4.5 rounded-full flex items-center justify-center border border-cream shadow-xs">
+                {cartCount}
+              </span>
+            )}
+          </button>
 
           <Link 
             to="/SignIn" 
