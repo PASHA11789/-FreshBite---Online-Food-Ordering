@@ -25,8 +25,8 @@ function App() {
         {!hideNavbar && <Header />}
         <CartDrawer />
         <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route path="/SignIn" element={<SignIn />} />
+          <Route path="/HomePage" element={<Homepage />} />
+          <Route path="/" element={<SignIn />} />
           <Route path="/Homepage" element={<Homepage />} />
           <Route path="/CheckOut" element={<CheckOut />} />
           <Route path="/Menu" element={<Menu />} />
