@@ -16,7 +16,7 @@ import { Routes, Route, useLocation } from "react-router-dom"
 
 function App() {
   const location = useLocation();
-  const hideNavbar = location.pathname.toLowerCase() === "/signin";
+  const hideNavbar = location.pathname === "/" || location.pathname.toLowerCase() === "/signin";
 
   return (
     <>
@@ -27,6 +27,8 @@ function App() {
         <Routes>
           <Route path="/HomePage" element={<Homepage />} />
           <Route path="/" element={<SignIn />} />
+          <Route path="/SignIn" element={<SignIn />} />
+          <Route path="/signin" element={<SignIn />} />
           <Route path="/Homepage" element={<Homepage />} />
           <Route path="/CheckOut" element={<CheckOut />} />
           <Route path="/Menu" element={<Menu />} />

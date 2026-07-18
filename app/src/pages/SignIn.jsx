@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/authContext";
 
@@ -8,14 +8,20 @@ function SignIn() {
     const [showPassword, setShowPassword] = useState(false);
 
     const navigate = useNavigate();
-    const { login } = useAuth();
+    const { user, login } = useAuth();
+
+    useEffect(() => {
+        if (user) {
+            navigate("/HomePage");
+        }
+    }, [user, navigate]);
 
     const handleSignIn = (e) => {
         e.preventDefault();
         if (!email || !password) return alert("Required input fields cannot be empty");
         const res = login(email, password);
         if (res.success) {
-            navigate("/");
+            navigate("/HomePage");
         } else {
             alert(res.message);
         }

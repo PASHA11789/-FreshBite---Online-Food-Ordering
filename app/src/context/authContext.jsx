@@ -13,7 +13,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = (email, password) => {
     const validUser = users.find(
-      (u) => u.email === email && u.password === password
+      (u) => u.email.toLowerCase() === email.toLowerCase() && u.password === password
     );
     
     if (validUser) {
